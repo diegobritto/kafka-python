@@ -238,3 +238,21 @@ cd /tmp/kafka-logs/
 ```
 Kafka-dump-log.sh
 ```
+#
+# Projeto
+
+
+1.  instalar apache
+```
+sudo apt update
+sudo apt install apache2
+sudo systemctl status apache2
+```
+2. criamos tópico apachelog
+```
+./kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --topic apachelog --create --partitions 3 --replication-factor 1
+```
+3. iniciamos um consumer 
+```
+./kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic apachelog 
+```
